@@ -7,24 +7,24 @@ const Slider = () => {
   const scrollContainerRef = useRef(null);
   const scrollIntervalRef = useRef(null); // To store the interval ID
   const [isScrolling, setIsScrolling] = useState(true); // State to track scrolling
+  const scrollAmountRef = useRef(0); // Ref to track scroll amount persistently
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
-    let scrollAmount = 0;
 
     const startScrolling = () => {
       scrollIntervalRef.current = setInterval(() => {
         if (scrollContainer) {
-          scrollAmount += 1;
-          scrollContainer.scrollLeft = scrollAmount;
+          scrollAmountRef.current += 1;
+          scrollContainer.scrollLeft = scrollAmountRef.current;
 
           // Smoothly transition back to the start when reaching the end
           if (
-            scrollAmount >=
+            scrollAmountRef.current >=
             scrollContainer.scrollWidth - scrollContainer.clientWidth
           ) {
             scrollContainer.scrollLeft = 0; // Reset scroll position
-            scrollAmount = 0;
+            scrollAmountRef.current = 0;
           }
         }
       }, 30); // Adjust the interval for speed
@@ -51,7 +51,22 @@ const Slider = () => {
   }, [isScrolling]); // Re-run effect when `isScrolling` changes
 
   const toggleScrolling = () => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      // Update scrollAmountRef to the current scrollLeft before toggling
+      scrollAmountRef.current = scrollContainer.scrollLeft;
+    }
     setIsScrolling((prev) => !prev); // Toggle the scrolling state
+  };
+
+  const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
+    toggleScrolling();
+  };
+
+  const handleTouchEnd = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
+    toggleScrolling();
   };
 
   return (
@@ -60,7 +75,8 @@ const Slider = () => {
       className="flex-1 flex gap-x-8 items-center justify-center overflow-x-auto scrollbar-hidden animate-fade-in mx-5"
       style={{ whiteSpace: "nowrap" }}
       onMouseDown={toggleScrolling} // Toggle on click
-      onTouchStart={toggleScrolling} // Toggle on touch
+      onTouchStart={handleTouchStart} // Handle touch start
+      onTouchEnd={handleTouchEnd} // Handle touch end
     >
       {/* Duplicate the images for smooth looping */}
       {[...images, ...images].map((image, index) => (
