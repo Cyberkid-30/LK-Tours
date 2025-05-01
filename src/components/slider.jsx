@@ -63,7 +63,7 @@ const Slider = () => {
   return (
     <div
       ref={scrollContainerRef}
-      className="flex flex-col gap-y-8 items-center overflow-x-auto scrollbar-hidden animate-fade-in md:flex-row md:gap-x-8 md:gap-y-0 mx-10"
+      className="flex items-center justify-center overflow-x-auto scrollbar-hidden animate-fade-in flex-row gap-x-8 gap-y-0 mx-10"
       style={{ whiteSpace: "nowrap" }}
     >
       {/* Duplicate the images for smooth looping */}
