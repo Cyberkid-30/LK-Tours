@@ -12,7 +12,7 @@ const BusinessCard = () => {
           unforgettable experiences.
         </p>
         <Link to={"/flyers"}>
-          <button className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 transition-colors duration-300">
+          <button className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 transition-colors duration-300 cursor-pointer">
             Our Services
           </button>
         </Link>

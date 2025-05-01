@@ -75,9 +75,9 @@ const Slider = () => {
       {/* Button to toggle scrolling */}
       <button
         onClick={toggleScrolling}
-        className="fixed size-10 top-2 right-2 flex items-center justify-center bg-white rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer"
+        className="fixed bottom-20 md:bottom-5 left-1/2 -translate-x-1/2 size-10 flex items-center justify-center bg-stone-800 rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer"
       >
-        <LucideMouse color="black" />
+        <LucideMouse color="white" />
       </button>
     </div>
   );
