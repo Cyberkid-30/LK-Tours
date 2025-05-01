@@ -21,7 +21,7 @@
       rgba(32, 58, 67, 0.75),
       rgba(44, 83, 100, 0.55)
     ),
-    url("/public/benz-car.jpg");
+    url("/benz-car.jpg");
   background-size: cover;
   background-position: center;
 }
