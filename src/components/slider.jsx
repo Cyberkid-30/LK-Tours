@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { image1, image2, image3, image4, image5 } from "../assets";
 import Image from "./Image";
+import { LucideMouse } from "lucide-react";
 
 const Slider = () => {
   const images = [image1, image2, image3, image4, image5];
@@ -59,29 +60,25 @@ const Slider = () => {
     setIsScrolling((prev) => !prev); // Toggle the scrolling state
   };
 
-  const handleTouchStart = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
-    toggleScrolling();
-  };
-
-  const handleTouchEnd = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
-    toggleScrolling();
-  };
-
   return (
-    <div
-      ref={scrollContainerRef}
-      className="flex-1 flex gap-x-8 items-center justify-center overflow-x-auto scrollbar-hidden animate-fade-in mx-5"
-      style={{ whiteSpace: "nowrap" }}
-      onMouseDown={toggleScrolling} // Toggle on click
-      onTouchStart={handleTouchStart} // Handle touch start
-      onTouchEnd={handleTouchEnd} // Handle touch end
-    >
-      {/* Duplicate the images for smooth looping */}
-      {[...images, ...images].map((image, index) => (
-        <Image key={index} url={image} />
-      ))}
+    <div className="flex-1 flex flex-col justify-center">
+      <div
+        ref={scrollContainerRef}
+        className="flex-1 flex gap-x-8 items-center justify-center overflow-x-auto scrollbar-hidden animate-fade-in mx-5"
+        style={{ whiteSpace: "nowrap" }}
+      >
+        {/* Duplicate the images for smooth looping */}
+        {[...images, ...images].map((image, index) => (
+          <Image key={index} url={image} />
+        ))}
+      </div>
+      {/* Button to toggle scrolling */}
+      <button
+        onClick={toggleScrolling}
+        className="fixed size-10 top-2 right-2 flex items-center justify-center bg-white rounded-full hover:scale-105 transition-transform duration-200 cursor-pointer"
+      >
+        <LucideMouse color="black" />
+      </button>
     </div>
   );
 };

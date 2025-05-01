@@ -2,7 +2,7 @@
 
 @theme {
   --animate-grow: grow 1s ease-in-out;
-  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-fade-in: fade-in-from-left 1s ease-in-out;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -21,7 +21,7 @@
       rgba(32, 58, 67, 0.75),
       rgba(44, 83, 100, 0.55)
     ),
-    url("/benz-car.jpg");
+    url("/lexus.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -38,11 +38,13 @@
   }
 }
 
-@keyframes fadeIn {
-  0% {
+@keyframes fade-in-from-left {
+  from {
     opacity: 0;
+    transform: translateX(-100%);
   }
-  100% {
+  to {
     opacity: 1;
+    transform: translateX(0);
   }
 }
