@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const BusinessCard = () => {
   return (
     <div className="flex-1 flex flex-col justify-center items-center">
-      <div className="flex flex-col justify-center items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-lg animate-grow">
-        <div className="w-24 h-24 bg-gray-700 rounded-full mb-4"></div>
+      <div className="flex flex-col gap-y-3 justify-center items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-lg animate-grow">
+        <img src="/person.svg" className="size-24 object-cover bg-white" />
         <h2 className="text-xl font-bold text-gray-800 mb-2">LK Tours</h2>
         <p className="text-gray-600 text-center mb-4">
           Explore the world with us! Discover amazing destinations and
