@@ -1,9 +1,7 @@
 import React from "react";
 
 const Image = ({ url }) => {
-  return (
-    <img src={url} className="size-full md:w-[35%] md:h-auto object-contain" />
-  );
+  return <img src={url} className="w-full max-w-[600px]" />;
 };
 
 export default Image;

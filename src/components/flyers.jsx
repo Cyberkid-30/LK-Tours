@@ -2,7 +2,7 @@ import Slider from "./slider";
 
 const Flyers = () => {
   return (
-    <section className="min-h-screen py-10 flex">
+    <section className="flex-1 flex">
       <Slider />
     </section>
   );
