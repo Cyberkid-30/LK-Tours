@@ -8,9 +8,9 @@
 @utility bg-car {
   background-image: linear-gradient(
       to right,
-      rgba(15, 32, 39, 0.85),
-      rgba(32, 58, 67, 0.75),
-      rgba(44, 83, 100, 0.55)
+      rgba(15, 32, 39, 0.95),
+      rgba(32, 58, 67, 0.85),
+      rgba(44, 83, 100, 0.75)
     ),
     url("/lexus.jpg");
   background-size: cover;
