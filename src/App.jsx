@@ -4,7 +4,7 @@ import router from "./router";
 
 function App() {
   return (
-    <main className="min-h-screen flex flex-col bg-car p-5 overflow-x-hidden overflow-y-auto text-white">
+    <main className="h-screen flex flex-col bg-car overflow-x-hidden overflow-y-auto text-white">
       <RouterProvider router={router}></RouterProvider>
     </main>
   );

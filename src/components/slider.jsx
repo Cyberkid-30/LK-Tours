@@ -7,7 +7,7 @@ const Slider = () => {
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="h-screen flex flex-col gap-y-8 items-center overflow-y-auto scrollbar-hidden animate-fade-in">
+      <div className="h-screen px-5 flex flex-col gap-y-8 items-center overflow-y-auto scrollbar-hidden animate-fade-in">
         {images.map((image, index) => (
           <Image key={index} url={image} />
         ))}
