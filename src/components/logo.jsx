@@ -1,15 +1,16 @@
-import { logo } from "../assets";
-import { Link } from "react-router-dom";
 import { ArrowDown, MoveDownIcon } from "lucide-react";
-import Flyers from "./flyers";
 import { motion } from "motion/react";
+import { logo } from "../assets";
+import Flyers from "./flyers";
 
 const Logo = () => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center">
       <section className="flex h-screen w-full flex-col items-center justify-center">
         <div className="flex flex-col items-center gap-y-3">
-          <p>Click the logo to view our page</p>
+          <p className="text-center text-xl">
+            Click the logo to <br /> view our page
+          </p>
           <MoveDownIcon />
 
           <a
@@ -28,12 +29,12 @@ const Logo = () => {
           </a>
         </div>
         <p className="flex flex-col items-center justify-center gap-2 mt-24">
-          <span className="text-xl font-[cursive]">Our Tours</span>
+          <span className="text-center text-2xl font-[cursive]">Our Tours</span>
           <a
             href="#flyers"
-            className="bg-white rounded-full p-2 cursor-pointer active:scale-90 transition-all duration-300"
+            className="bg-white rounded-full p-1 cursor-pointer active:scale-90 transition-all duration-300"
           >
-            <ArrowDown color="black" size={20} />
+            <ArrowDown color="black" size={18} />
           </a>
         </p>
       </section>
